@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rangga Pradipta — Frontend Developer",
+  title: "Raden Hanif Abdul Hakim — Frontend Developer",
   description:
     "Portofolio frontend developer. Membangun antarmuka web modern, cepat, dan berkarakter dengan React, Next.js, dan Tailwind CSS.",
   keywords: [
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     "Portofolio",
     "Freelance",
   ],
-  authors: [{ name: "Rangga Pradipta" }],
+  authors: [{ name: "Raden Hanif Abdul Hakim" }],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Rangga Pradipta — Frontend Developer",
+    title: "Raden Hanif Abdul Hakim — Frontend Developer",
     description:
       "Membangun antarmuka web modern, cepat, dan berkarakter dengan React, Next.js, dan Tailwind CSS.",
     type: "website",

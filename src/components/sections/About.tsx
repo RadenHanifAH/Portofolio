@@ -59,7 +59,7 @@ export default function About() {
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-px flex-1 bg-slate-200" />
                   <span className="font-display text-xs font-semibold tracking-widest text-slate-500">
-                    RANGGA PRADIPTA
+                    RADEN HANIF ABDUL HAKIM
                   </span>
                 </div>
               </div>

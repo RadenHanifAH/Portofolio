@@ -62,7 +62,7 @@ export default function Hero() {
             className="max-w-xl text-lg text-white/85 sm:text-xl"
           >
             Hai, saya{" "}
-            <span className="font-semibold text-white">Rangga Pradipta</span> —
+            <span className="font-semibold text-white">Raden Hanif Abdul Hakim</span> —
             membangun antarmuka web yang cepat, indah, dan berkarakter dengan
             React, Next.js, dan Tailwind CSS. Fokus pada detail mikro, motion
             design, dan accessibility.
@@ -139,8 +139,13 @@ export default function Hero() {
 function LanyardCard() {
   return (
     <div className="relative h-[340px] w-[260px] overflow-hidden rounded-2xl bg-white text-slate-900 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] ring-1 ring-black/5">
+      {/* Punch hole + grommet where the lanyard string attaches */}
+      <div className="absolute left-1/2 top-2 z-30 flex h-4 w-4 -translate-x-1/2 items-center justify-center rounded-full bg-slate-900 ring-2 ring-slate-300">
+        <div className="h-1.5 w-1.5 rounded-full bg-slate-700" />
+      </div>
+
       {/* Top stripe */}
-      <div className="flex items-center justify-between bg-[#2563eb] px-4 py-2.5 text-white">
+      <div className="flex items-center justify-between bg-[#2563eb] px-4 pt-6 pb-2.5 text-white">
         <span className="font-display text-xs font-bold tracking-widest">
           DEV ID
         </span>
@@ -150,19 +155,18 @@ function LanyardCard() {
       <div className="p-4">
         {/* Avatar */}
         <div className="mb-3 flex items-center gap-3">
-          <div className="relative h-16 w-16 overflow-hidden rounded-xl bg-gradient-to-br from-slate-800 to-slate-600 ring-2 ring-lime">
-            {/* Stylized avatar SVG instead of external image (no CORS issues) */}
-            <svg viewBox="0 0 64 64" className="h-full w-full">
-              <circle cx="32" cy="24" r="11" fill="#a3e635" />
-              <path
-                d="M12 60c0-11 9-18 20-18s20 7 20 18"
-                fill="#1f2937"
-              />
-            </svg>
+          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-800 ring-2 ring-lime">
+            {/* Real photo avatar */}
+            <img
+              src="/avatar.png"
+              alt="Raden Hanif Abdul Hakim"
+              className="h-full w-full object-cover"
+              draggable={false}
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-display text-base font-bold leading-tight">
-              Rangga Pradipta
+              Raden Hanif Abdul Hakim
             </span>
             <span className="text-xs text-slate-500">Frontend Engineer</span>
             <span className="mt-1 inline-flex w-fit items-center gap-1 rounded-full bg-lime/30 px-2 py-0.5 text-[10px] font-semibold text-slate-800">

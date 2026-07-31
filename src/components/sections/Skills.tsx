@@ -4,14 +4,10 @@ import { motion } from "framer-motion";
 import {
   Atom,
   Box,
-  Component,
   Database,
-  Figma,
   GitBranch,
-  Palette,
   Server,
   Wind,
-  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import SplitText from "@/components/animations/SplitText";
@@ -41,32 +37,11 @@ const skills: Skill[] = [
     note: "App Router, ISR, RSC",
   },
   {
-    name: "TypeScript",
-    level: 90,
-    Icon: Component,
-    tint: "#3178c6",
-    note: "Generics, inference, strict mode",
-  },
-  {
     name: "Tailwind CSS",
     level: 96,
     Icon: Wind,
     tint: "#a3e635",
     note: "Design tokens, plugin system",
-  },
-  {
-    name: "Framer Motion",
-    level: 88,
-    Icon: Zap,
-    tint: "#ff0080",
-    note: "Layout anim, gestures, drag",
-  },
-  {
-    name: "Figma",
-    level: 80,
-    Icon: Figma,
-    tint: "#f24e1e",
-    note: "Auto-layout, design system",
   },
   {
     name: "Node.js",
@@ -81,13 +56,6 @@ const skills: Skill[] = [
     Icon: Database,
     tint: "#5a67d8",
     note: "Schema, migrations, queries",
-  },
-  {
-    name: "Design Systems",
-    level: 85,
-    Icon: Palette,
-    tint: "#f59e0b",
-    note: "Tokens, theming, a11y",
   },
   {
     name: "Git & CI/CD",
@@ -145,7 +113,7 @@ export default function Skills() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.06 } },
           }}
-          className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"
+          className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3"
         >
           {skills.map((skill) => (
             <motion.li

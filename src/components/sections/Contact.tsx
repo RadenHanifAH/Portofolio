@@ -79,13 +79,13 @@ export default function Contact() {
 
             <Reveal delay={0.25}>
               <a
-                href="mailto:halo@rangga.dev"
+                href="mailto:halo@radenhanif.dev"
                 className="group inline-flex w-fit items-center gap-3 text-lg font-semibold text-white"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-lime text-slate-900 transition-transform group-hover:scale-110">
                   <Mail size={18} />
                 </span>
-                halo@rangga.dev
+                halo@radenhanif.dev
                 <ArrowUpRight
                   size={18}
                   className="text-white/50 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-lime"
@@ -205,7 +205,7 @@ export default function Contact() {
 
         {/* Footer bottom bar */}
         <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/50 sm:flex-row">
-          <p>© 2026 Rangga Pradipta. Dibuat dengan Next.js + Tailwind + Framer Motion.</p>
+          <p>© 2026 Raden Hanif Abdul Hakim. Dibuat dengan Next.js + Tailwind + Framer Motion.</p>
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-lime" />
             <span>All systems go</span>
