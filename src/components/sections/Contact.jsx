@@ -208,7 +208,7 @@ export default function Contact() {
 
         {/* Footer bottom bar */}
         <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/50 sm:flex-row">
-          <p>© 2026 Raden Hanif Abdul Hakim. Dibuat dengan React + Tailwind + Framer Motion.</p>
+          <p>© 2026 Raden Hanif Abdul Hakim.</p>
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-lime" />
             <span>All systems go</span>
