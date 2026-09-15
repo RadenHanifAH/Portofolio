@@ -89,7 +89,7 @@ export default function Hero() {
             className="flex items-center gap-2 text-sm text-white/70"
           >
             <MapPin size={14} className="text-lime" />
-            Bandung, Indonesia · Remote-friendly
+            Bandung, Indonesia
           </motion.div>
         </div>
 
