@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --color-lime: #a3e635;
+    --color-brand-blue: #2563eb;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+.font-body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Accent colors */
+.text-lime {
+  color: #a3e635;
+}
+
+.bg-lime {
+  background-color: #a3e635;
+}
+
+.border-lime {
+  border-color: #a3e635;
+}
+
+/* Grid backgrounds */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Selection */
+::selection {
+  background-color: #a3e635;
+  color: #0f172a;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
