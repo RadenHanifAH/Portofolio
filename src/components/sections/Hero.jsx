@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Sparkles, MapPin } from "lucide-react";
+import { ArrowDown, FileDown, MapPin } from "lucide-react";
 import SplitText from "@/components/animations/SplitText";
 import MagneticButton from "@/components/animations/MagneticButton";
 import BlobBackground from "@/components/animations/BlobBackground";
 import Lanyard from "@/components/animations/Lanyard";
 import meImg from "@/components/img/me.jpeg";
+import cvPdf from "@/components/documents/CV.pdf";
 
 export default function Hero() {
   return (
@@ -73,12 +74,15 @@ export default function Hero() {
             </MagneticButton>
             <MagneticButton
               as="a"
-              href="#contact"
-              ariaLabel="Hubungi saya"
+              href={cvPdf}
+              download="CV - Raden Hanif Abdul Hakim.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="Download CV Raden Hanif Abdul Hakim"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
-              <Sparkles size={16} className="text-lime" />
-              Hubungi Saya
+              <FileDown size={16} className="text-lime" />
+              Download CV
             </MagneticButton>
           </motion.div>
 
