@@ -7,7 +7,7 @@ const timeline = [
   {
     role: "Web Developer Intern",
     company: "Syaamil Group",
-    period: "2024 — 2025",
+    period: "2025 — 2026",
     location: "Bandung, ID",
     type: "internship",
     description:
@@ -120,19 +120,17 @@ export default function Experience() {
 
                   {/* Card */}
                   <div
-                    className={`md:px-8 ${
-                      isLeft
+                    className={`md:px-8 ${isLeft
                         ? "md:col-start-1 md:pr-12 md:text-right"
                         : "md:col-start-2 md:pl-12 md:text-left"
-                    }`}
+                      }`}
                   >
                     <div
                       className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-lime/40 hover:shadow-[0_18px_40px_-15px_rgba(37,99,235,0.25)] sm:p-7"
                     >
                       <div
-                        className={`flex flex-wrap items-center gap-3 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
+                        className={`flex flex-wrap items-center gap-3 ${isLeft ? "md:justify-end" : ""
+                          }`}
                       >
                         <span className="inline-flex items-center gap-1.5 rounded-full bg-[#2563eb]/8 px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#2563eb]">
                           <Icon size={12} />
@@ -147,9 +145,8 @@ export default function Experience() {
                         {job.role}
                       </h3>
                       <div
-                        className={`mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
+                        className={`mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600 ${isLeft ? "md:justify-end" : ""
+                          }`}
                       >
                         <span className="font-semibold text-slate-900">
                           {job.company}
@@ -163,16 +160,14 @@ export default function Experience() {
                       </p>
 
                       <ul
-                        className={`mt-4 space-y-1.5 text-sm text-slate-700 ${
-                          isLeft ? "md:flex md:flex-col md:items-end" : ""
-                        }`}
+                        className={`mt-4 space-y-1.5 text-sm text-slate-700 ${isLeft ? "md:flex md:flex-col md:items-end" : ""
+                          }`}
                       >
                         {job.highlights.map((h) => (
                           <li
                             key={h}
-                            className={`flex items-start gap-2 ${
-                              isLeft ? "md:flex-row-reverse md:text-right" : ""
-                            }`}
+                            className={`flex items-start gap-2 ${isLeft ? "md:flex-row-reverse md:text-right" : ""
+                              }`}
                           >
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime" />
                             <span>{h}</span>
@@ -181,9 +176,8 @@ export default function Experience() {
                       </ul>
 
                       <div
-                        className={`mt-5 flex flex-wrap gap-1.5 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
+                        className={`mt-5 flex flex-wrap gap-1.5 ${isLeft ? "md:justify-end" : ""
+                          }`}
                       >
                         {job.stack.map((tech) => (
                           <span
