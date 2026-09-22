@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Code2 } from "lucide-react";
+import { Briefcase, GraduationCap, Code2, Wrench } from "lucide-react";
 import SplitText from "@/components/animations/SplitText";
 import Reveal from "@/components/animations/Reveal";
 
@@ -25,6 +25,45 @@ const timeline = [
     ],
   },
   {
+    role: "Website & System Maintainer",
+    company: "Qubba Foundation & Syaamil LMS",
+    period: "2025 — 2026",
+    location: "Bandung, ID",
+    type: "maintenance",
+    description:
+      "Memelihara stabilitas operasional, keamanan, dan pembaruan konten secara berkala untuk website yayasan dan platform pembelajaran internal.",
+    highlights: [
+      "Pemeliharaan website Qubba Foundation berbasis WordPress: update konten campaign donasi, monitoring performa, dan update plugin keamanan.",
+      "Monitoring dan troubleshooting sistem internal LMS Moodle Syaamil Group, pengelolaan forum, serta kelancaran kalender kegiatan.",
+    ],
+    stack: [
+      "WordPress",
+      "Moodle",
+      "PHP",
+      "CSS",
+      "CMS Maintenance",
+    ],
+  },
+  {
+    role: "Frontend Developer",
+    company: "XI U-Jank Chocolate",
+    period: "2025",
+    location: "Bandung, ID",
+    type: "project",
+    description:
+      "Membangun website company profile untuk produk kuliner cokelat 'U-Jank' dengan antarmuka yang modern, responsif, dan terintegrasi kontak pemesanan.",
+    highlights: [
+      "Mengembangkan antarmuka responsif dan interaktif menggunakan React, Vite, dan Tailwind CSS.",
+      "Menyajikan katalog produk, profil usaha, serta alur navigasi sederhana yang terdeploy di Vercel.",
+    ],
+    stack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+  },
+  {
     role: "Frontend Developer",
     company: "TanyaKampus",
     period: "2024 — 2025",
@@ -43,6 +82,26 @@ const timeline = [
       "JavaScript",
     ],
   },
+  {
+    role: "Fullstack Developer",
+    company: "Sweet Dessert",
+    period: "2024",
+    location: "Bandung, ID",
+    type: "project",
+    description:
+      "Mengembangkan aplikasi web katalog dan pemesanan aneka dessert manis berbasis RESTful API dan basis data fleksibel.",
+    highlights: [
+      "Membangun REST API dan routing backend menggunakan Python Flask yang efisien.",
+      "Mengintegrasikan basis data NoSQL MongoDB untuk manajemen katalog produk dan pesanan.",
+    ],
+    stack: [
+      "Python",
+      "Flask",
+      "MongoDB",
+      "REST API",
+      "HTML/CSS",
+    ],
+  },
 ];
 
 const iconFor = {
@@ -50,6 +109,7 @@ const iconFor = {
   work: Briefcase,
   academic: GraduationCap,
   project: Code2,
+  maintenance: Wrench,
 };
 
 const labelFor = {
@@ -57,6 +117,7 @@ const labelFor = {
   work: "Full-time",
   academic: "Proyek Akademik",
   project: "Proyek",
+  maintenance: "Pemeliharaan",
 };
 
 export default function Experience() {
@@ -132,7 +193,13 @@ export default function Experience() {
                         className={`flex flex-wrap items-center gap-3 ${isLeft ? "md:justify-end" : ""
                           }`}
                       >
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#2563eb]/8 px-2.5 py-1 text-[10px] font-bold tracking-wider text-[#2563eb]">
+                        <span
+                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider ${
+                            job.type === "maintenance"
+                              ? "bg-emerald-50 text-emerald-700 border border-emerald-200/80"
+                              : "bg-[#2563eb]/8 text-[#2563eb]"
+                          }`}
+                        >
                           <Icon size={12} />
                           {labelFor[job.type]}
                         </span>

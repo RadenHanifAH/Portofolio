@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  ExternalLink,
-  Github,
-  Globe,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SplitText from "@/components/animations/SplitText";
 import Reveal from "@/components/animations/Reveal";
+import ProjectCard from "@/components/ProjectCard";
 
 import syaamilImg from "@/components/img/syaamil.png";
 import tanyaKampusImg from "@/components/img/tanya-kampus.png";
 import sweetDessertImg from "@/components/img/sweet-dessert.png";
+import xiuJankImg from "@/components/img/xiu-jank.png";
+import qubbaImg from "@/components/img/qubba.png";
+import lmsImg from "@/components/img/lms.png";
 
 const projects = [
   {
@@ -67,6 +66,60 @@ const projects = [
       { label: "Kategori", val: "E-Commerce" },
     ],
   },
+  {
+    id: "xi-u-jank",
+    title: "XI U-Jank Chocolate",
+    subtitle: "Company Profile Produk Cokelat",
+    category: "Frontend Developer",
+    year: "2025",
+    description:
+      "Website company profile untuk produk cokelat \"U-Jank\", menampilkan profil usaha, katalog produk, dan informasi kontak. Dibangun dengan struktur navigasi sederhana (Beranda, Profil, Produk, Kontak) yang responsif.",
+    tags: ["React", "Vite", "Tailwind CSS"],
+    image: xiuJankImg,
+    liveUrl: "https://xi-u-jank-chocolate.vercel.app/",
+    githubUrl: "https://github.com/RadenHanifAH/XI-U-JANK",
+    stats: [
+      { label: "Frontend", val: "React" },
+      { label: "Styling", val: "Tailwind" },
+      { label: "Tipe", val: "Company" },
+    ],
+  },
+  {
+    id: "qubba-foundation",
+    title: "Qubba Foundation",
+    subtitle: "Website Resmi Yayasan Qubba Foundation",
+    category: "MAINTENANCE",
+    year: "2025",
+    description:
+      "Melakukan pemeliharaan rutin website yayasan, termasuk update konten dan banner promosi (campaign donasi), monitoring performa, perbaikan bug tampilan, dan update plugin/keamanan.",
+    tags: ["WordPress", "PHP", "CSS"],
+    image: qubbaImg,
+    liveUrl: "https://qubbafoundation.org/",
+    githubUrl: null,
+    stats: [
+      { label: "Platform", val: "WordPress" },
+      { label: "Fokus", val: "CMS & Update" },
+      { label: "Sektor", val: "Yayasan" },
+    ],
+  },
+  {
+    id: "lms-syaamil",
+    title: "LMS Syaamil",
+    subtitle: "Learning Management System untuk Syaamil Group",
+    category: "MAINTENANCE",
+    year: "2025/2026",
+    description:
+      "Bertanggung jawab menjaga stabilitas dan kelancaran operasional platform LMS internal, termasuk pengelolaan konten, pengecekan fungsi kalender & forum, serta troubleshooting.",
+    tags: ["Moodle", "PHP", "LMS"],
+    image: lmsImg,
+    liveUrl: null,
+    githubUrl: null,
+    stats: [
+      { label: "Platform", val: "Moodle" },
+      { label: "Fokus", val: "Maintenance" },
+      { label: "Sektor", val: "Internal LMS" },
+    ],
+  },
 ];
 
 export default function Work() {
@@ -102,7 +155,7 @@ export default function Work() {
             />
             <Reveal delay={0.2}>
               <p className="max-w-md text-sm text-slate-600 sm:text-base leading-relaxed">
-                Koleksi aplikasi web yang saya bangun dengan fokus pada arsitektur
+                Koleksi aplikasi web yang saya bangun dan rawat dengan fokus pada arsitektur
                 bersih, performa responsif, dan fungsi terintegrasi. Jelajahi website
                 secara langsung atau lihat repositori kode di GitHub.
               </p>
@@ -110,7 +163,7 @@ export default function Work() {
           </div>
         </div>
 
-        {/* Featured Projects Grid (3 Columns) */}
+        {/* Featured Projects Grid (3 Columns on lg, 2 on md: exactly 2 full rows x 3 columns) */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -122,160 +175,12 @@ export default function Work() {
           className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={{
-                hidden: { opacity: 0, y: 35 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_60px_-20px_rgba(15,23,42,0.18)]"
-            >
-              {/* Card Header Thumbnail View */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900 select-none">
-                {/* Real screenshot from src/components/img */}
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Hover Quick Action Overlay */}
-                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-slate-950/75 p-6 opacity-0 backdrop-blur-xs transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="font-display text-sm font-semibold tracking-wide text-white">
-                    Eksplorasi Proyek
-                  </span>
-                  <div className="flex flex-wrap items-center justify-center gap-2.5">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full bg-lime px-4 py-2 text-xs font-bold text-slate-950 shadow-lg transition-transform hover:scale-105"
-                      >
-                        <Globe size={14} />
-                        <span>Kunjungi Web</span>
-                        <ExternalLink size={12} />
-                      </a>
-                    )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1.5 rounded-full text-xs font-bold transition-all hover:scale-105 ${
-                        project.liveUrl
-                          ? "border border-white/30 bg-white/10 px-4 py-2 text-white backdrop-blur-sm hover:bg-white/20"
-                          : "bg-lime px-5 py-2.5 text-slate-950 shadow-lg"
-                      }`}
-                    >
-                      <Github size={14} />
-                      <span>{project.liveUrl ? "GitHub" : "Buka di GitHub"}</span>
-                      <ExternalLink size={12} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Body */}
-              <div className="flex flex-1 flex-col justify-between p-6">
-                <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2563eb]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#2563eb]" />
-                      {project.category}
-                    </span>
-                    <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-                      {project.year}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-2.5 font-display text-xl font-bold text-slate-900 transition-colors group-hover:text-[#2563eb]">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-1 text-xs font-medium text-slate-500 italic">
-                    "{project.subtitle}"
-                  </p>
-
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600 line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  {/* Highlights / Stats Pills */}
-                  <div className="mt-4 grid grid-cols-3 gap-2 rounded-xl bg-slate-50 p-2.5 border border-slate-100 text-center">
-                    {project.stats.map((s) => (
-                      <div key={s.label} className="flex flex-col">
-                        <span className="font-display text-xs font-bold text-slate-900 truncate">
-                          {s.val}
-                        </span>
-                        <span className="text-[10px] text-slate-500 font-medium">
-                          {s.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tech Tags */}
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {project.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 transition-colors group-hover:bg-lime/30 group-hover:text-slate-900"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Card Action Buttons */}
-                <div className="mt-6 pt-5 border-t border-slate-100">
-                  {project.liveUrl ? (
-                    <div className="flex items-center gap-2.5">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-xs font-bold text-white shadow-sm transition-all hover:bg-[#2563eb] group/btn"
-                      >
-                        <Globe size={15} className="text-lime transition-transform group-hover/btn:scale-110" />
-                        <span>Kunjungi Website</span>
-                        <ExternalLink size={13} className="text-slate-400 group-hover/btn:text-white" />
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 px-3.5 py-3 text-xs font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900 transition-colors"
-                        title="Lihat Repositori GitHub"
-                      >
-                        <Github size={16} />
-                        <span className="hidden sm:inline">GitHub</span>
-                      </a>
-                    </div>
-                  ) : (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-xs font-bold text-white shadow-sm transition-all hover:bg-[#2563eb] group/btn"
-                    >
-                      <Github size={15} className="text-lime transition-transform group-hover/btn:scale-110" />
-                      <span>Kunjungi Repositori GitHub</span>
-                      <ExternalLink size={13} className="text-slate-400 transition-colors group-hover/btn:text-white" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </motion.div>
 
         {/* Bottom CTA */}
-        <Reveal delay={0.2} className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Reveal delay={0.2} className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-slate-900 px-8 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:bg-[#2563eb]"
@@ -291,3 +196,4 @@ export default function Work() {
     </section>
   );
 }
+
